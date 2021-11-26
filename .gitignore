@@ -1,5 +1,8 @@
 # Private Node Modules
 node_modules/
 
+# Production App
+/dist
+
 # Environments
 .env
