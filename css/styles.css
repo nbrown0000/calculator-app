@@ -9,6 +9,8 @@ body {
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,19 +19,19 @@ body {
 
 .container {
   display: flex;
-  margin-top: 200px;
-  background-color: lightgrey;
+  background-color: #d3d3d3;
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
+  border-radius: 5px;
+  box-shadow: 3px 3px 0 0 #939393;
 }
 
 .display {
   grid-column: 1 / span 4;
   grid-row: 1 / span 1;
   margin: 5px;
-  /* height: 40px; */
   background-color: white;
   font-size: 25px;
   font-weight: lighter;
@@ -37,6 +39,7 @@ body {
   justify-content: flex-end;
   align-items: center;
   padding: 10px;
+  box-shadow: -2px -2px 1px 1px #c5c9cd;
 }
 
 .numbers {
@@ -65,9 +68,21 @@ body {
 .numbers .btn {
   background-color: #7E9BB7;
   color: white;
+  box-shadow: 2px 2px 1px 1px #586c80;
+}
+.numbers .btn:active {
+  transform: translateY(1px);
+  transform: translateX(1px);
+  box-shadow: 1px 1px 1px 1px #586c80;
 }
 
 .operators .btn {
   background-color: #3F4B59;
   color: white;
+  box-shadow: 2px 2px 1px 1px #000;
+}
+.operators .btn:active {
+  transform: translateY(1px);
+  transform: translateX(1px);
+  box-shadow: 1px 1px 1px 1px #000;
 }
