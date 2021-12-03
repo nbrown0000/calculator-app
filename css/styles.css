@@ -18,6 +18,7 @@ body {
 }
 
 .container {
+  width: 230px;
   display: flex;
   background-color: #d3d3d3;
   padding: 10px;
