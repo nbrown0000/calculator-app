@@ -12,7 +12,13 @@ buttons.forEach(button => button.addEventListener('click', function(e) {
 }))
 
 function setDisplay(string) {
-  display = string;
+  const currentDisplay = document.querySelector('.display').textContent;
+  if(currentDisplay.length === 13) {
+    display = currentDisplay;
+  }
+  else {
+    display = string;
+  }
   document.querySelector('.display').textContent = display;
   // console.log(display, typeof(display))
 }
