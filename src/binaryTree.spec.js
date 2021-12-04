@@ -1,6 +1,7 @@
 const {
   buildTreeFromString,
-  calculateInOrder
+  calculateInOrder,
+  parseInOrder
 } = require('./binaryTree.js');
 
 describe('build tree from string', () => {
@@ -67,6 +68,33 @@ describe('calculate in order', () => {
     let tree = buildTreeFromString('30+381');
     let result = calculateInOrder(tree);
     expect(result).toBe(411);
+  })
+
+})
+
+describe('parse in order', () => {
+  test('5+2', () => {
+    let tree = buildTreeFromString('5+2');
+    let parsed = parseInOrder(tree);
+    expect(parsed).toBe(true);
+  })
+
+  test('5+', () => {
+    let tree = buildTreeFromString('5+');
+    let parsed = parseInOrder(tree);
+    expect(parsed).toBe(false);
+  })
+
+  test('+3', () => {
+    let tree = buildTreeFromString('+3');
+    let parsed = parseInOrder(tree);
+    expect(parsed).toBe(false);
+  })
+
+  test('2+3/', () => {
+    let tree = buildTreeFromString('2+3/');
+    let parsed = parseInOrder(tree);
+    expect(parsed).toBe(false);
   })
 
 })

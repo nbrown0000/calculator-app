@@ -72,7 +72,23 @@ function calculateInOrder(tree) {
   // 3. handle mistakes in arithmetic (eg. output "Malformed express for '34+' " )
 }
 
+function parseInOrder(tree) {
+  if (tree === null) {
+    return false
+  }
+  else if (isNumber(tree.getValue())) {
+    return true;
+  }
+  else if (isOperator(tree.getValue())) {
+    return parseInOrder(tree.leftChild) && parseInOrder(tree.rightChild);
+  }
+  else {
+    return false;
+  }
+}
+
 export {
   buildTreeFromString,
-  calculateInOrder
+  calculateInOrder,
+  parseInOrder
 }

@@ -1,4 +1,4 @@
-import { buildTreeFromString, calculateInOrder } from './binaryTree.js';
+import { buildTreeFromString, calculateInOrder, parseInOrder } from './binaryTree.js';
 
 
 // initialize display value
@@ -32,9 +32,15 @@ function clearDisplay() {
 }
 
 function calculate(string) {
-  let tree = buildTreeFromString(string)
-  let result = calculateInOrder(tree);
-  setDisplay(result)
+  let tree = buildTreeFromString(string);
+  let parsedSuccess = parseInOrder(tree);
+  if (parsedSuccess) {
+    let result = calculateInOrder(tree);
+    setDisplay(result);
+  }
+  else {
+    setDisplay('Syntax Error');
+  }
 }
 
 function pressKey(key) {
