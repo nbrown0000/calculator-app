@@ -27,8 +27,8 @@ function multiply(num1, num2) {
 }
 
 function operate(operator, num1, num2) {
-  let number1 = parseInt(num1);
-  let number2 = parseInt(num2);
+  let number1 = parseFloat(num1);
+  let number2 = parseFloat(num2);
   if (operator === '+') {
     return add(number1, number2);
   }

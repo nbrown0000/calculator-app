@@ -18,19 +18,19 @@ body {
 }
 
 .container {
-  width: 230px;
+  width: 332px;
   display: flex;
   background-color: #d3d3d3;
   padding: 10px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   border-radius: 5px;
   box-shadow: 3px 3px 0 0 #939393;
 }
 
 .display {
-  grid-column: 1 / span 4;
+  grid-column: 1 / span 6;
   grid-row: 1 / span 1;
   margin: 5px;
   background-color: white;
@@ -57,6 +57,13 @@ body {
   flex-direction: column;
 }
 
+.other {
+  grid-column: 5 / span 2;
+  grid-row: 2 / span 4;
+  display: flex;
+  flex-direction: column;
+}
+
 .btn {
   width: 1.8em;
   margin: 8px;
@@ -66,12 +73,14 @@ body {
   border: none;
 }
 
-.numbers .btn {
+.numbers .btn,
+.other .btn {
   background-color: #7E9BB7;
   color: white;
   box-shadow: 2px 2px 1px 1px #586c80;
 }
-.numbers .btn:active {
+.numbers .btn:active,
+.other .btn:active {
   transform: translateY(1px);
   transform: translateX(1px);
   box-shadow: 1px 1px 1px 1px #586c80;

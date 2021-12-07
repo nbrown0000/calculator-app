@@ -29,6 +29,7 @@ function clearDisplay() {
 
 function calculate(string) {
   let tree = buildTreeFromString(string);
+  console.table(tree)
   let parsedSuccess = parseInOrder(tree);
   if (parsedSuccess) {
     let result = calculateInOrder(tree);
@@ -50,6 +51,10 @@ function pressKey(key) {
 
   else if (key === '+' || key === '-' || key === '*' || key === '/') {
     setDisplay(display + key)
+  }
+
+  else if (key === '.') {
+    setDisplay(display + key);
   }
 
   else if (display === '0') {

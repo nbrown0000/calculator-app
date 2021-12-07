@@ -2,7 +2,7 @@ import Node from './node.js';
 import { operate } from './calculator.js';
 
 function isNumber(string) {
-  return string.match(/[0-9]/);
+  return string.match(/^[0-9]*([.][0-9]*)?$/);
 }
 
 function isOperator(string) {

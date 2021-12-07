@@ -31,6 +31,13 @@ describe('build tree from string', () => {
     expect(tree.getLeftChild().getLeftChild().getLeftChild().getValue()).toBe('2');
     expect(tree.getLeftChild().getLeftChild().getRightChild().getValue()).toBe('8');
   })
+
+  test('1.5+1.5', () => {
+    let tree = buildTreeFromString('1.5+1.5');
+    expect(tree.getValue()).toBe('+');
+    expect(tree.getLeftChild().getValue()).toBe('1.5');
+    expect(tree.getRightChild().getValue()).toBe('1.5');
+  })
 })
 
 describe('calculate in order', () => {
@@ -70,6 +77,18 @@ describe('calculate in order', () => {
     expect(result).toBe(411);
   })
 
+  test('1.5+1.5', () => {
+    let tree = buildTreeFromString('1.5+1.5');
+    let result = calculateInOrder(tree);
+    expect(result).toBe(3);
+  })
+
+  test('5/2', () => {
+    let tree = buildTreeFromString('5/2');
+    let result = calculateInOrder(tree);
+    expect(result).toBe(2.5);
+  })
+
 })
 
 describe('parse in order', () => {
@@ -95,6 +114,12 @@ describe('parse in order', () => {
     let tree = buildTreeFromString('2+3/');
     let parsed = parseInOrder(tree);
     expect(parsed).toBe(false);
+  })
+
+  test('1.5+1.5', () => {
+    let tree = buildTreeFromString('1.5+1.5');
+    let parsed = parseInOrder(tree);
+    expect(parsed).toBe(true);
   })
 
 })
