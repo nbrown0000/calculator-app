@@ -35,7 +35,7 @@ function calculate(string) {
     setDisplay(result);
   }
   else {
-    setDisplay('Syntax Error');
+    setDisplay('Syntax Err');
   }
 }
 
